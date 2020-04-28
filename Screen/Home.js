@@ -62,16 +62,9 @@ class Home extends React.Component {
         let postdata = new FormData();
         postdata.append('type', 'A');
 
-        fetch('http://erp.z-way.com.tw/phptest/tomchart.php', {
+        fetch('*', {
             method: 'POST',
             body: postdata,
-            // headers: {
-            //     "Accept": "application/json",
-            //     "Content-Type": 'application/json',
-            //     "Connection": "close",
-            //     "type": "getUserData",
-            // }, "Connection": "close",
-            // "type": "getUserData",
         }).then((result => {
             if (result.ok) {
                 result.json().then((obj) => {
@@ -97,7 +90,7 @@ class Home extends React.Component {
         console.log('lu1no', this.state.c_area.lu1no);
         //console.log('postdata', postdata);
 
-        fetch('http://erp.z-way.com.tw/phptest/tomchart.php', { //?type=C&dp1lun2=' + this.state.c_area.lu1no
+        fetch('*', { //?type=C&dp1lun2=' + this.state.c_area.lu1no
             method: 'POST',
             body: postdata,
         }).then((result => {
@@ -127,7 +120,7 @@ class Home extends React.Component {
         postdata.append('type', 'M');
         postdata.append('brano', this.state.c_store.DP1NO);
         console.log('postdata', postdata);
-        fetch('http://erp.z-way.com.tw/phptest/tomchart.php', {//?type=M&brano=' + this.state.c_store.DP1NO,
+        fetch('*', {//?type=M&brano=' + this.state.c_store.DP1NO,
             method: 'POST',
             body: postdata,
         }).then((result => {
